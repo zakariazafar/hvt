@@ -53,7 +53,7 @@ module Importer
 	 			end
 	 			items << row 
 	 		end
-	 	   @clazz.delay.import @table_columns, items, :validate => false, on_duplicate_key_ignore: true
+	 	   @clazz.import @table_columns, items, :validate => false, on_duplicate_key_ignore: true
 	  end
 
     end
