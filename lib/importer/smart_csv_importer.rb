@@ -17,7 +17,7 @@ module Importer
     end
 
     def from_csv
-      @source = @file.tempfile
+      @source = @file #@file.tempfile
       File.open(@source, "r:bom|utf-8") do |f|	
 	 	import(f)
       end

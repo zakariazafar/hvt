@@ -2,7 +2,7 @@
 class MenusController < ApplicationController
   def import
     uri = params[:dataset].blank? ? nil : params[:dataset][:uri]
-    raise Error::CustomError unless Menu.delay.import_processig(params[:file], uri)
+    raise Error::CustomError unless Menu.delay.import_processig(params[:file].tempfile, uri)
     redirect_to upload_url, notice: 'Menus imported.'
   end
 
