@@ -1,6 +1,6 @@
-# Custom Error Module
+# :nodoc:
 module Error
-  # Custom Error class
+  # :nodoc:
   class CustomError < StandardError
     attr_reader :status, :error, :message
 

@@ -1,0 +1,25 @@
+<% unless smart_listing.empty? %>
+ <table class="table table-striped">
+ 	<thead>
+ 		<th class="col-xs-1"><%= smart_listing.sortable "Places", "place"%> </th>
+ 		<th class="col-xs-1"><%= smart_listing.sortable "Venues", "venue"%> </th>
+ 		<th class="col-xs-1"><%= smart_listing.sortable "Events", "event"%> </th>
+ 	</thead>
+ 	<tbody>
+ 		<% smart_listing.collection.each do |o| %>
+ 		<% out = MenuDecorator.decorate(o) %>
+ 		<tr>
+ 		  <td class="col-xs-1"><%= out.titleized_place %></td>
+ 		  <td class="col-xs-1"><%= link_to out.titleized_venue, show_menus_path(:menu_id=> o.id) %></td>
+ 		  <td class="col-xs-1"><%= link_to out.titleized_event, show_menus_path(:menu_id=> o.id)  %></td>
+ 		</tr>
+ 		<% end %>
+ 	</tbody>
+ </table>
+
+
+ <%= smart_listing.paginate %>
+  <%= smart_listing.pagination_per_page_links %>
+ <% else %>
+  No record found
+ <% end %>

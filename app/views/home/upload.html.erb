@@ -1,0 +1,142 @@
+        	<ul class="nav nav-tabs">
+			  <li class="active"><a data-toggle="tab" href="#dishes">Dishes</a></li>
+			  <li><a data-toggle="tab" href="#menus">Menus</a></li>
+			  <li><a data-toggle="tab" href="#menu_items">Menu Items</a></li>
+			  <li><a data-toggle="tab" href="#menu_pages">Menu Pages</a></li>
+			</ul>
+
+			<div class="tab-content">
+			  <% if !notice.blank? %>
+			  <div class="alert alert-success alert-dismissable">
+			     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			     <strong>Success!</strong> <%=notice%>
+			   </div>
+			  <% end %>
+
+			  <div id="dishes" class="tab-pane fade in active">
+
+			  		<h3>Dishes Dataset</h3>
+					<div class="row">
+					  <div class="col-md-4">
+					  	  <div class="form-group">
+						  	<br>
+						    <label>Import by file:</label>
+						    <%= form_tag dishes_import_path, multipart: true do %>
+						    <%= file_field_tag :file %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+
+					  </div>
+					  <div class="col-md-2"><h2>OR</h2></div>
+					  <div class="col-md-4">
+					  		<div class="form-group">
+						  	<br>
+						    <label>Import from URL:</label>
+						    <%= form_tag dishes_import_path do %>
+						    <%= text_field(:dataset, :uri, class: "form-control") %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+					  </div>
+					</div>
+
+
+			  </div>
+			  <div id="menus" class="tab-pane fade">
+			    <h3>Menus Dataset</h3>
+			    
+			    <div class="row">
+					  <div class="col-md-4">
+					  	  <div class="form-group">
+						  	<br>
+						    <label>Import by file:</label>
+						    <%= form_tag menus_import_path, multipart: true do %>
+						    <%= file_field_tag :file %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+
+					  </div>
+					  <div class="col-md-2"><h2>OR</h2></div>
+					  <div class="col-md-4">
+					  		<div class="form-group">
+						  	<br>
+						    <label>Import from URL:</label>
+						    <%= form_tag menus_import_path do %>
+						    <%= text_field(:dataset, :uri, class: "form-control") %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+					  </div>
+					</div>
+
+			  </div>
+			  <div id="menu_items" class="tab-pane fade">
+			    <h3>Menu Items Dataset</h3>
+			    
+			    <div class="row">
+					  <div class="col-md-4">
+					  	  <div class="form-group">
+						  	<br>
+						    <label>Import by file:</label>
+						    <%= form_tag menu_items_import_path, multipart: true do %>
+						    <%= file_field_tag :file %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+
+					  </div>
+					  <div class="col-md-2"><h2>OR</h2></div>
+					  <div class="col-md-4">
+					  		<div class="form-group">
+						  	<br>
+						    <label>Import from URL:</label>
+						    <%= form_tag menu_items_import_path do %>
+						    <%= text_field(:dataset, :uri, class: "form-control") %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+					  </div>
+					</div>
+			  </div>
+
+			  <div id="menu_pages" class="tab-pane fade">
+			    <h3>Menu Pages Dataset</h3>
+			    
+			    <div class="row">
+					  <div class="col-md-4">
+					  	  <div class="form-group">
+						  	<br>
+						    <label>Import by file:</label>
+						    <%= form_tag menu_pages_import_path, multipart: true do %>
+						    <%= file_field_tag :file %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+
+					  </div>
+					  <div class="col-md-2"><h2>OR</h2></div>
+					  <div class="col-md-4">
+					  		<div class="form-group">
+						  	<br>
+						    <label>Import from URL:</label>
+						    <%= form_tag menu_pages_import_path do %>
+						    <%= text_field(:dataset, :uri, class: "form-control") %>
+						    <br>
+						    <%= submit_tag "upload", class: "btn btn-default" %>
+		      				<% end %>
+						  </div>
+					  </div>
+					</div>
+			  </div>
+
+
+			

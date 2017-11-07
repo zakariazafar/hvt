@@ -1,0 +1,27 @@
+
+
+<form class="form-inline" action="<%=export_path%>">
+  <div class="form-group">
+    <label for="place">Place:</label>
+    <input type="text" name="export[place]" class="form-control" id="place">
+  </div>
+  <div class="form-group">
+    <label for="daterange">Date range:</label>
+    <input type="text" name="export[daterange]" class="daterange form-control" />
+  </div>
+  
+  <button type="submit" class="btn btn-default">Export</button>
+</form>
+
+
+
+<%= smart_listing_controls_for(:menus, {class: "form-inline text-right"}) do %>
+ <div class="form-group filter input-append">
+    <%= text_field_tag :filter, '', class: "search form-control", placeholder: "Search...", autocomplete: :off %>
+    <button class="btn btn-primary disabled" type="submit">
+      <span class="glyphicon glyphicon-search"></span>
+    </button>
+ </div>
+<% end %>
+
+<%= smart_listing_render(:menus) %>

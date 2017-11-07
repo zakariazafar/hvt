@@ -1,5 +1,4 @@
-# Home controller
+# :nodoc:
 class HomeController < ApplicationController
-	def upload
-	end
+  def upload; end
 end

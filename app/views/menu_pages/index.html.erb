@@ -1,0 +1,7 @@
+<%= smart_listing_controls_for(:menu_pages, {class: "form-inline text-right"}) do %>
+ <div class="form-group filter input-append">
+    <%= link_to "back", request.referer.present? ? request.referer : places_path %>
+ </div>
+<% end %>
+
+<%= smart_listing_render(:menu_pages) %>

@@ -1,4 +1,4 @@
-# error controller for 404 and 500 errors
+# :nodoc:
 class ErrorsController < ApplicationController
   def not_found
     render json: {

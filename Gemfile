@@ -18,6 +18,19 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'rails_script', '~> 0.6.1'
+gem 'postgres-copy'
+gem 'smarter_csv'
+gem 'activerecord-import'
+# gem 'parallel'
+gem 'delayed_job_active_record'
+gem "daemons"
+gem 'dry-container'
+gem "smart_listing"
+gem 'draper'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -43,6 +56,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'awesome_print'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

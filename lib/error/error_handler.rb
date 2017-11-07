@@ -1,6 +1,6 @@
-# Error Module
+# :nodoc:
 module Error
-  # Error handler module
+  # :nodoc:
   module ErrorHandler
     def self.included(clazz)
       clazz.class_eval do
