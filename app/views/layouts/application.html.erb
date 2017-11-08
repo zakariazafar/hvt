@@ -24,13 +24,15 @@
   <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
 </head>
 <body>
 	<div class="row">
   <div class="col-md-8 col-md-offset-1">
     <ul class="nav nav-pills">
-      <li <% if !current_page?(controller: 'menus', action: 'index') %> class="active" <% end %> ><%= link_to 'Import Datasets', upload_path %></li>
-      <li <% if current_page?(controller: 'menus', action: 'index') %> class="active" <% end %> ><%= link_to 'Places', places_path %></li>
+
+      <li class="<%=activated_link('import')%>"><%= link_to 'Import Datasets', upload_path %></li>
+      <li class="<%=activated_link('menu')%>"><%= link_to 'Places', places_path %></li>
     </ul>
 </div>
 </div>
@@ -38,21 +40,20 @@
   <div class="col-md-8 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-heading">
-        	<% if current_page?(controller: 'menus', action: 'index') %>
-              Places/Venues/Events
-             <% else %>
-             Import Datasets
-             <% end %>
-           </div>
+        	<%= show_panel_header %>
+        </div>
         <div class="panel-body">
-
-    <%= yield %>
- </div>
+          <%= yield %>
         </div>
       </div>
+    </div>
    </div>
 </div>
-
+<script>
+  $(function(){
+  $('.daterange').daterangepicker();
+});
+</script>
 
 </body>
 </html>

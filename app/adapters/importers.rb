@@ -3,7 +3,8 @@ module Importers
   extend ActiveSupport::Concern
   # :nodoc:
   module ClassMethods
-    def import_processig(file, uri)
+    def import_it(args)
+      file, uri = args
       dependency_container = Dry::Container.new
       dependency_container.register 'importer' do
         # Importer::CsvImporter.new(file, uri, self)

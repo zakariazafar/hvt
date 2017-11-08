@@ -10,5 +10,5 @@ module Exporters
       end
       dependency_container.resolve(:exporter).export_dataset
     end
-  end  
+  end
 end

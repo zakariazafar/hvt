@@ -1,23 +1,17 @@
 <% unless smart_listing.empty? %>
  <table class="table table-striped">
- 	<!-- <thead>
- 		<th class="col-xs-1"><%= smart_listing.sortable "Menu", "place"%> </th>
- 		<th class="col-xs-1"><%= smart_listing.sortable "Venues", "venue"%> </th>
- 		<th class="col-xs-1"><%= smart_listing.sortable "Events", "event"%> </th>
- 	</thead> -->
  	<tbody>
  		<% smart_listing.collection.each do |page| %>
  		<% page.menu_items.each do |item|%>
  		  
  		<tr>
- 		  <td class="col-xs-1"><%= item.dish.name %></td>
+ 		  <td class="col-xs-1"><%= item.dish_name %></td>
  		  
  		</tr>
  		<% end %>
  		<% end %>
  	</tbody>
  </table>
-
 
  <%= smart_listing.paginate %>
   <%= smart_listing.pagination_per_page_links %>

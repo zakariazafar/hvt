@@ -7,8 +7,7 @@ module Exporter
     end
 
     def export_dataset
-    	{dataset: @dataset.to_json, type: 'json'}
+      { dataset: @dataset.to_json, type: 'json' }
     end
-
   end
 end
